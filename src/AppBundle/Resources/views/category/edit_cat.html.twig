@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+Edit category nr. {{ cat.id }}
+{% endblock %}
+{% block body %}
+   {{ form_start(formedit) }}
+    {% form_theme formedit ':form:fields.html.twig' %}
+    {{ form_widget(formedit) }}
+    <input type="submit" value="Edit">
+    {{ form_end(formedit) }}
+
+    <ul>
+        <li><a href="{{ path('cat_index') }}"><h4>Back to Category List</h4></a></li>
+        <li><a href="{{ path('delete_cat',{'id':cat.id}) }}"><h4>Delete this Category</h4></a></li>
+     </ul>
+{% endblock %}
